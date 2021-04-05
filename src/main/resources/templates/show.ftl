@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<#if hello??>
+    <h1>Welcome: ${hello}</h1>
+</#if>
+
 <p>
     Message: ${message}
 </p>

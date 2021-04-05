@@ -19,6 +19,9 @@ public class MyController {
     @Value("${mymessage}")
     private String message;
 
+    @Value("${guest}")
+    private String guest;
+
     @GetMapping("/getMessage")
     public String getMessage(Model model) {
         model.addAttribute("message", message);
@@ -45,7 +48,9 @@ public class MyController {
         fmt.withZone(ZoneId.of("CET"));
         String time = fmt.format(ldt);
 
-        map.addAttribute("message", message).addAttribute("time", time);
+        map.addAttribute("message", message)
+                .addAttribute("hello", guest)
+                .addAttribute("time", time);
 
         return "show";
     }
