@@ -16,5 +16,4 @@ public class WebController {
         return "hellogg";
     }
 
-
 }
